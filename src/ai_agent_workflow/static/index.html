@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Agent Workflows</title>
+    <link rel="stylesheet" href="/static/styles.css?v=5" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">LangGraph control panel</p>
+          <h1 id="page-title">Workflows</h1>
+        </div>
+        <div class="status-pill" id="status">Loading</div>
+      </section>
+
+      <section class="task-panel" aria-label="Task input">
+        <label for="task">Task</label>
+        <textarea
+          id="task"
+          rows="4"
+          placeholder="Describe what the selected workflow should do"
+        >Reset password for alex@example.com</textarea>
+      </section>
+
+      <section class="content-grid">
+        <div>
+          <h2>Available Workflows</h2>
+          <div class="workflow-list" id="workflow-list"></div>
+        </div>
+
+        <aside class="result-panel" aria-live="polite">
+          <div class="result-header">
+            <h2>Run Result</h2>
+            <button class="ghost-button" id="clear-result" type="button">Clear</button>
+          </div>
+          <div id="result" class="result-body">Choose a workflow and start it.</div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="/static/app.js?v=5"></script>
+  </body>
+</html>

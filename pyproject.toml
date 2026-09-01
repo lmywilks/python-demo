@@ -1,0 +1,41 @@
+[project]
+name = "ai-agent-workflow"
+version = "0.1.0"
+description = "Python 3.12 LangGraph AI agent with an LLM gateway workflow."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langgraph>=0.2.0",
+    "python-dotenv>=1.0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "ruff>=0.6.0",
+]
+real-llm = [
+    "litellm>=1.50.0",
+]
+
+[project.scripts]
+agent-workflow = "ai_agent_workflow.cli:main"
+agent-workflow-web = "ai_agent_workflow.app:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ai_agent_workflow = ["static/*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
